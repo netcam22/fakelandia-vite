@@ -17,17 +17,19 @@
     }
 
     &__logo {
-        width: 90%;
-        flex-basis: 90%;
+        width: 80%;
+        flex-basis: 80%;
+        margin: 0 10%;
         
         @include respond-medium {
             max-width: 40%;
             flex-basis: 40%;
+            margin: 0;
         }
 
         @include respond-large {
-            max-width: 25%;
-            flex-basis: 25%;
+            max-width: 22%;
+            flex-basis: 22%;
             margin: 0;
         }
     }

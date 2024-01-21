@@ -19,11 +19,11 @@
     text-align: center;
   
     @include respond-medium {
-      font-size: 4rem;
+      font-size: 3rem;
     }
   
     @include respond-large {
-      font-size: 5rem;
+      font-size: 4rem;
     }
   }
 

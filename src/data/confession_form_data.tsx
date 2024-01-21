@@ -44,7 +44,7 @@ export const formTextAreaInput: Array<FormTextAreaInputObject> = [
     role: "details",
     regex: [/^.{10,500}$/gi],
     errorMessage: ["must be between 10 and 500 characters"],
-    size: {rows: 8, cols: 10}
+    size: {rows: 4, cols: 10}
     }
 ];
 

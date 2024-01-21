@@ -1,6 +1,6 @@
 .form {
 	border-radius: 5px;
-	padding: 1%;
+	padding: 0 1% 1% 1%;
     box-sizing: border-box;
     width: 60%;
     margin: 0 auto;
@@ -98,6 +98,7 @@
             font-size: 1.5rem;
             text-align: center;
             font-family: "Algeria";
+            color: darken($olive, 10%);
         }
         &--navlink {
             font-family: "Algeria";
