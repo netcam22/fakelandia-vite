@@ -1,0 +1,35 @@
+.header {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 1% 2% 8% 2%;
+    background-color: lighten($blueberry, 42%);
+    flex-wrap: wrap;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 30vh;
+    background-image: url("/images/houses.png");
+    background-position-y: bottom;
+    background-repeat: repeat-x;
+
+    @include respond-medium {
+        flex-direction: row;
+    }
+
+    &__logo {
+        width: 90%;
+        flex-basis: 90%;
+        
+        @include respond-medium {
+            max-width: 40%;
+            flex-basis: 40%;
+        }
+
+        @include respond-large {
+            max-width: 25%;
+            flex-basis: 25%;
+            margin: 0;
+        }
+    }
+
+}

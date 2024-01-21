@@ -1,0 +1,37 @@
+$coconut: rgb(235,236,247);
+$dark-blue: rgb(36,42,109);
+$blueberry: rgb(40, 173, 229);
+$lime: rgb(198, 211, 45);
+$lemon: rgb(243, 236, 24);
+$olive: rgb(142, 173, 79);
+$cherry: rgb(239, 30, 36);
+
+$misdemeanour-colours: ('rudeness': $blueberry, 'lift': $lime, 
+'vegetables': $olive, 'united': $lemon);
+
+$grey: rgba(0,0,0,0.2);
+$box-shadow: 0 4px 8px 0 $grey;
+
+/* Font: Algeria Regular[Font]
+"https://fontsgeek.com/fonts/Algerian-Regular"
+Accessed 28/12/23 */
+@font-face {
+  font-family: "Algeria";
+  src: url("/fonts/AlgerianRegular.ttf");
+}
+
+@mixin respond-small {
+    @media (min-width: 600px) { @content };
+  }
+
+  @mixin respond-medium {
+    @media (min-width: 768px) { @content };
+  }
+
+  @mixin respond-large {
+    @media (min-width: 992px) { @content };
+  }
+
+  @mixin respond-x-large {
+    @media (min-width: 1200px) { @content };
+  }

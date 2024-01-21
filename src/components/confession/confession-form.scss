@@ -1,0 +1,113 @@
+.form {
+	border-radius: 5px;
+	padding: 1%;
+    box-sizing: border-box;
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    font-weight:500;
+
+    &--blue {
+        background-color: lighten($blueberry, 38%);
+        color: $dark-blue;
+        border: darken($blueberry, 5%) solid 1px;
+        border-radius: 1%;;
+        box-shadow: $box-shadow;
+    }
+
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    &__fieldset {
+        float: left;
+        width: 80%;
+        margin: 5% 10%;
+        &--lemon {
+            background-color: lighten($lemon, 30%);
+            padding-bottom: 10%;
+            color: $dark-blue;
+            border: darken($lemon, 15%) solid 1px;
+            border-radius: 1%;
+            box-shadow: $box-shadow;
+            background-position-y: bottom;
+            background-repeat: repeat-x;
+            background-image: url("/images/houses.png");
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 1%;
+        border: 1px solid $olive;
+        border-radius: 4px;
+        resize: vertical;
+        box-sizing: border-box;
+        font-size: 1.1rem;
+        margin: 0;
+
+        &--narrow {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+    &__label {
+        padding: 1% 1% 1% 0;
+        display: inline-block;
+        width: 100%;
+        font-weight:600;
+        margin: 0 0 0 1%;
+        font-size: 1.5rem;
+        font-family: "Algeria";
+    }
+
+    &__button {
+        background-color: $dark-blue;
+        color: $coconut;
+        padding: 1% 2%;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+        font-size: 1.1rem;
+    }
+    
+    &__button:hover {
+        background-color: $cherry;
+    }
+    
+    &__button:disabled{
+    border: 1px solid $olive;
+    background-color: $coconut;
+    color: $olive;
+    }
+
+    &__message {
+        width: 100%;
+        &--error {
+            color: darken($cherry, 20%);   
+        }
+        &--normal {
+            color: $dark-blue;
+        }
+        &--response {
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+            font-family: "Algeria";
+        }
+        &--navlink {
+            font-family: "Algeria";
+        }
+        &--navlink a {
+            text-decoration: none;
+            color: $dark-blue;
+        }
+        &--navlink a:hover {
+            color: $cherry;
+        }
+    }    
+}

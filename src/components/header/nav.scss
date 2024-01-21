@@ -1,0 +1,106 @@
+
+.navbar {
+    margin: 2% 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1000;
+    max-height:fit-content;
+
+    @include respond-medium { 
+        flex-basis: 60%;
+    }
+
+    @include respond-large { 
+      flex-basis: 75%;
+  }
+
+    &__list {
+      display: flex;
+      list-style: none;
+      flex-direction: column;
+      position: fixed;
+      top:0;
+      left: 0;
+      z-index: 1000;
+      padding: 0;
+      width: 100%;
+      display: none;
+      margin: 0;
+      line-height: 1.8rem;
+
+      @include respond-medium { 
+        flex-direction: row;
+        position: relative;
+        justify-content:flex-end;
+        display: flex;
+      }
+
+      &--light {
+        @include respond-medium { 
+          background-color: transparent;
+        }
+      }
+    }
+
+    &__item {
+      margin: 0;
+      padding: 4%;
+      font-size: 1.5rem;
+      background-color: $lemon;
+      font-family: "Algeria";
+
+      @include respond-medium { 
+        font-size: 1.2rem;
+        padding: 0;
+        background-color: transparent;
+        margin: 0 2%; 
+      }
+
+      @include respond-large { 
+        font-size: 1.9rem;  
+      }
+
+      &--dark a {
+        text-decoration: none;
+        word-break:keep-all;
+        cursor: pointer;
+        color: $dark-blue;
+      }
+    
+      &--dark a:hover {
+        color: $cherry;
+      }
+    }
+  
+    &__element {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      float: right;
+      font-size: 3rem;
+      cursor: pointer;
+      line-height: 3.6rem;
+
+      @include respond-medium { 
+        width: 100%;
+      }
+
+      &--bars {
+        color: $cherry;
+        position: fixed;
+        top: 1%;
+        right: 1%;
+        margin: 0;
+        z-index: 2000;
+
+        @include respond-medium { 
+          display: none;
+        }
+      }
+    }
+
+    &__element:hover &__list {
+      display: flex;
+    }
+  }

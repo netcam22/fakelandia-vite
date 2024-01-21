@@ -1,0 +1,15 @@
+@use "sass:map";
+@use 'sass:color';
+@use 'sass:list';
+@import "./assets/styles/global-styles.scss";
+@import "./components/layouts/main-layout.scss";
+@import "./components/header/header.scss";
+@import "./components/header/nav.scss";
+@import "./components/home/home.scss";
+@import "./components/home/flip-card.scss";
+@import "./components/misdemeanours/misdemeanours.scss";
+@import "./components/confession/confession.scss";
+@import "./components/confession/confession-form.scss";
+@import "./components/footer/footer.scss";
+@import "./components/response-error/response-error.scss";
+@import "./components/not-found/not-found.scss";

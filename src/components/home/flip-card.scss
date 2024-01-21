@@ -1,0 +1,94 @@
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 300px;
+    perspective: 1000px; 
+    margin-bottom: 2%;
+
+    @include respond-medium {  
+        flex-basis:40%;
+    } 
+    @include respond-large {  
+        flex-basis:20%;
+    }   
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: $box-shadow;
+
+        &--title {
+            font-family: "Algeria";
+            color: $dark-blue;
+            font-size: 1.5rem;
+            margin: 5%;
+        }
+        &--icon {
+            color: $dark-blue;
+            font-size: 2rem;
+            margin: 2%;
+        }
+        &--text {
+            font-family: "Algeria";
+            color: $dark-blue;
+            font-size: 1.2rem;
+            margin: 10%;
+        }
+        &--logo {
+            max-width: 40%;
+            flex-basis: 40%;
+        }
+        &--link {
+            font-family: "Algeria";
+            font-size: 1.3rem;
+            margin: 5%;
+            text-decoration: none;
+            text-align: center;
+        }
+        &--link a {
+            text-decoration: none;
+            color: $dark-blue;
+        }
+        &--link a:hover{
+            color: $cherry;
+        }
+    }
+
+    &:hover &__inner {
+        transform: rotateY(180deg);
+    }
+
+    &__front, &__back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        background-color: transparent;
+    }
+
+    &__front {   
+        color: $dark-blue;
+        @each $misdemeanour, $colour in $misdemeanour-colours {
+            &--#{$misdemeanour}{
+                background-color: lighten($colour, 15%);
+            }
+        }
+    }
+
+    &__back {
+        transform: rotateY(180deg);
+        background-position-y: bottom;
+        background-repeat: repeat-x;
+        background-image: url("/images/houses.png");
+        @each $misdemeanour, $colour in $misdemeanour-colours {
+            &--#{$misdemeanour}{
+                background-color:  lighten($colour, 30%);
+            }
+        }
+    }
+
+}

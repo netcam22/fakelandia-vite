@@ -1,0 +1,134 @@
+.filter-misdemeanours-form {
+  width: 90%;
+  margin: 0 5%;
+  text-align: center;
+  color: $dark-blue;
+  @include respond-medium {  
+  width: 80%;
+  margin: 0 10%;
+  }
+  @include respond-large{  
+    width: 50%;
+    margin: 0 25%;
+  }
+}
+
+.container {
+    padding: 2%;
+    position: relative;
+    font-family: "Algeria";
+}
+
+.row {
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: stretch;
+    align-items: center;
+    border-bottom: $grey solid 1px;
+    box-shadow: $box-shadow;
+
+    &:last-child{
+      border-bottom: none;
+    }
+
+    &--headings {
+      margin-bottom: 2%;
+      border-bottom: none;
+    }
+    @include respond-medium {  
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    @include respond-large{  
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    @each $misdemeanour, $colour in $misdemeanour-colours {
+      &--#{$misdemeanour}{
+          background-color: lighten($colour, 30%);
+      }
+    }
+  }
+
+  .cell {
+    padding: 1% 5%;
+    margin: 3% 0 0 0;
+    position: sticky;
+    text-align: center;
+    contain: content;
+    font-size: 1.4rem;
+
+    @include respond-small {
+      font-size: 1.6rem;
+    }
+
+    @include respond-medium {
+      font-size: 1.6rem;
+      padding: 1% 3%;
+    }
+
+    @include respond-large{
+      font-size: 1.7rem;
+      display: block;
+      padding: 1% 6%;
+    }
+
+    &__heading {
+      background-color: $lemon;
+      color: $dark-blue;
+      font-size: 1rem;
+      font-weight: 900;
+      padding: 1%;
+      display: none;
+      margin: 0;
+      border: none;
+
+      @include respond-small {
+        font-size: 1.3rem;
+      }
+  
+      @include respond-medium {
+        font-size: 1.6rem;
+        padding: 3%;
+      }
+  
+      @include respond-large{
+        display: block;
+      }
+    }
+
+    &__image {
+      margin: 0 0 4% 0;
+      
+      @include respond-medium {
+        margin: 0;
+      }
+    }
+
+  }
+
+  .loading {
+    position: relative;
+    margin-left: 1%;
+    opacity: 0;
+    animation: move-emojis 1s forwards infinite;
+    text-align: left;
+    float: left;
+  }
+
+@keyframes move-emojis {
+  0% {
+    bottom: -0.5em;
+    opacity: 1;
+  }
+
+  40% {
+    bottom: 0.5em;
+  }
+
+  60% {
+    bottom: 0;
+    opacity: 1;
+  }
+}

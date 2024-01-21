@@ -1,0 +1,65 @@
+.page {
+  flex: 1 0 auto; 
+  line-height: 1.5;
+  margin:0;
+  padding: 0;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  min-height:65vh;
+  background-color: lighten($lemon, 40%);
+
+  &__title {
+    background-color: transparent;
+    font-family: "Algeria";
+    font-size: 3rem;
+    color: $dark-blue;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  
+    @include respond-medium {
+      font-size: 4rem;
+    }
+  
+    @include respond-large {
+      font-size: 5rem;
+    }
+  }
+
+  &__sub-title {
+    background-color: transparent;
+    font-family: "Algeria";
+    font-size: 1.2rem;
+    color: $dark-blue;
+    margin: 2%;
+    padding: 0;
+    text-align: center;
+  
+    @include respond-medium {
+      font-size: 1.4rem;
+    }
+  
+    @include respond-large {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__text {
+    background-color: transparent;
+    font-size: 1rem;
+    color: $dark-blue;
+    margin: 0 5%;
+    padding: 0;
+    text-align: center;
+  
+    @include respond-medium {
+      font-size: 1.2rem;
+    }
+  
+    @include respond-large {
+      font-size: 1.3rem;
+    }
+  }
+}
+
