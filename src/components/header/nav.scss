@@ -1,11 +1,17 @@
-
 .navbar {
-    margin: 2% 0;
+    position: sticky;
+    margin: 0;
     padding: 0;
-    flex-wrap: wrap;
-    justify-content: center;
     z-index: 1000;
-    max-height:fit-content;
+    max-height: fit-content;
+    flex-basis: 1fr;
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+    box-sizing: border-box;
+    margin: 0;
+    }
 
     @include respond-medium { 
         flex-basis: 60%;
@@ -13,94 +19,234 @@
 
     @include respond-large { 
       flex-basis: 75%;
-  }
+    }
 
     &__list {
       display: flex;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: flex-start;
+      align-items: flex-start;
       list-style: none;
       flex-direction: column;
-      position: fixed;
-      top:0;
-      left: 0;
-      z-index: 1000;
-      padding: 0;
-      width: 100%;
-      display: none;
+      position: absolute;
       margin: 0;
-      line-height: 1.8rem;
+      top: 0;
+      left: -100vw;
+      z-index: 0;
+      -webkit-font-smoothing: antialiased;
+      transform-origin: 0% 0%;
+      width: 100vw;
+      transform: translate(-100vw, 0);
+      transition: none;
 
       @include respond-medium { 
-        flex-direction: row;
-        position: relative;
-        justify-content:flex-end;
-        display: flex;
-      }
-
-      &--light {
-        @include respond-medium { 
-          background-color: transparent;
-        }
-      }
-    }
-
-    &__item {
-      margin: 0;
-      padding: 4%;
-      font-size: 1.5rem;
-      background-color: $lemon;
-      font-family: "Algeria";
-
-      @include respond-medium { 
-        font-size: 1.2rem;
-        padding: 0;
         background-color: transparent;
-        margin: 0 2%; 
+        width: 100%;
+        left: 0;
+        padding: 0;
+        position: relative;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        align-content: center;
+        align-items: flex-end;
+        transform: none;
+        transition: none;
       }
 
       @include respond-large { 
-        font-size: 1.9rem;  
+        flex-direction: row;
+        align-items: baseline;
       }
 
-      &--dark a {
-        text-decoration: none;
-        word-break:keep-all;
-        cursor: pointer;
-        color: $dark-blue;
-      }
-    
-      &--dark a:hover {
-        color: $cherry;
-      }
-    }
-  
-    &__element {
-      margin: 0;
-      padding: 0;
-      position: relative;
-      float: right;
-      font-size: 3rem;
-      cursor: pointer;
-      line-height: 3.6rem;
-
-      @include respond-medium { 
-        width: 100%;
+      &--transition {
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
       }
 
-      &--bars {
-        color: $cherry;
-        position: fixed;
-        top: 1%;
-        right: 1%;
-        margin: 0;
-        z-index: 2000;
+      &--style {
+        background-color: $lemon;
+        border-bottom-right-radius: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: $box-shadow;
 
         @include respond-medium { 
-          display: none;
+          background-color: transparent;
+          border: none;
+          line-height: 3rem;
+          box-shadow: none;
+      }
+    }
+  }
+
+  &__item {
+      margin: 0;
+      padding: 4%;
+      font-size: 1.5rem;
+      transition: background-color 0.3s ease;
+      font-family: "Algeria";
+
+        @include respond-medium { 
+          font-size: 1.2rem;
+          padding: 0;
+          background-color: transparent;
         }
+
+        @include respond-large { 
+          font-size: 1.9rem;  
+        }
+
+        &:first-child {
+          padding-top: 1rem;
+        }
+        
+        &:last-child {
+          padding-bottom: 1rem;
+        }
+
+        & a {
+          text-decoration: none;
+          word-break: keep-all;
+          cursor: pointer;
+          transition: color 0.3s ease;
+        }
+
+        &:hover {
+          @include respond-medium { 
+            background-color: transparent;
+          }
+        }
+
+        &--style {
+          padding: 0.5rem 2rem 0.5rem 2rem;
+
+          &:first-child:hover {
+            border-top-right-radius: 20px;
+          }
+
+          &:last-child:hover {
+            border-bottom-right-radius: 20px;
+          }
+
+          & a {
+            font-size: 1.6rem;
+            line-height: 3rem;
+            color: darken($cherry, 10%);
+            @include respond-small {
+              font-size: 2rem;
+            }
+          }
+
+          & a:hover {
+            color: $dark-blue;
+          }
+
+          & a:active {
+            color: $dark-blue;
+          }
+
+          @include respond-medium { 
+            border-bottom: none;
+            background-color: transparent;
+            padding: 0.5rem 2rem 0.5rem 2rem;
+
+              &:last-child {
+                padding-bottom: 0.5rem;
+              }
+
+              &:hover {
+                background-color: transparent;
+              }
+
+              & a {
+                color: $dark-blue;
+                font-size: 1.6rem;
+              }
+
+              & a:hover {
+                color: $cherry;
+              }
+          }
+        }
+  }
+
+    &__element {
+      display: block;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      padding: 1rem 0;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+
+      @include respond-medium { 
+        position: sticky;
+        padding: 0;
       }
     }
 
-    &__element:hover &__list {
-      display: flex;
+    &__burger {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+      background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+      opacity 0.55s ease;
+
+      @include respond-medium { 
+        display: none;
+      }
+
+      &:first-child {
+        transform-origin: 0% 0%;
+      }
+
+      &:nth-last-child(2) {
+        transform-origin: 0% 100%;
+      }
+
+      &--color {
+        background: darken($olive, 10%);
+      }
+    }
+
+    &__checkbox {
+      display: block;
+      width: 3rem;
+      height: 2.5rem;
+      position: absolute;
+      top: 0.5rem;
+      left: -0.5rem;
+      cursor: pointer;
+      opacity: 0;
+      z-index: 2; 
+      -webkit-touch-callout: none;
+
+      &:checked ~ .navbar__burger {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+      }
+
+      &:checked ~ .navbar__burger:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+      }
+
+      &:checked ~ .navbar__burger:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .navbar__checkbox:checked ~ .navbar__list--transition {
+        transform: none;
+    }
+    .navbar__checkbox:not(:checked) ~ .navbar__list--transition {
+        transition: none;
     }
   }

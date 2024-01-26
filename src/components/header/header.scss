@@ -1,36 +1,39 @@
 .header {
-    width: 100%;
     display: flex;
-    margin: 0;
-    padding: 1% 2% 8% 2%;
-    background-color: lighten($blueberry, 42%);
-    flex-wrap: wrap;
-    flex-direction: column;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 2% 0 20% 0;
     box-sizing: border-box;
     min-height: 30vh;
     background-image: url("/images/houses.png");
     background-position-y: bottom;
     background-repeat: repeat-x;
+    background-color: lighten($blueberry, 42%);
 
     @include respond-medium {
         flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 2% 0 8% 2%;
     }
 
     &__logo {
-        width: 80%;
-        flex-basis: 80%;
-        margin: 0 10%;
+        width: $logo-width-mobile;
+        flex-basis: $logo-width-mobile;
+        margin: 0 0 10% 0;
+        z-index: 1;
         
         @include respond-medium {
-            max-width: 40%;
-            flex-basis: 40%;
+            max-width: $logo-width-tablet;
+            flex-basis: $logo-width-tablet;
             margin: 0;
         }
 
         @include respond-large {
-            max-width: 22%;
-            flex-basis: 22%;
-            margin: 0;
+            max-width: $logo-width-desktop;
+            flex-basis: $logo-width-desktop;
         }
     }
 

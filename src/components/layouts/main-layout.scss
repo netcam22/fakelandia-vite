@@ -8,6 +8,7 @@
   -webkit-font-smoothing: antialiased;
   min-height:65vh;
   background-color: lighten($lemon, 40%);
+  flex-direction: column;
 
   &__title {
     background-color: transparent;
