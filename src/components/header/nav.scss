@@ -178,6 +178,7 @@
       cursor: pointer;
       -webkit-user-select: none;
       user-select: none;
+      -webkit-tap-highlight-color:transparent;
 
       @include respond-medium { 
         position: sticky;
