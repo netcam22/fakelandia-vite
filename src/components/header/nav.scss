@@ -250,13 +250,12 @@
       &:checked ~ .navbar__burger:nth-last-child(2) {
         transform: rotate(-45deg) translate(0, -1px);
       }
-    }
-  }
-  @media (max-width: 767px) {
-    .navbar__checkbox:checked ~ .navbar__list--transition {
+
+      &:checked ~ .navbar__list{
         transform: none;
-    }
-    .navbar__checkbox:not(:checked) ~ .navbar__list--transition {
-        transition: none;
+      }
+      &:not(:checked) ~ .navbar__list--transition {
+          transition: none;
+      }
     }
   }
