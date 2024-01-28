@@ -21,6 +21,15 @@
       flex-basis: 75%;
     }
 
+    &__sr-only {
+      position:absolute;
+      left:-10000px;
+      top:auto;
+      width:1px;
+      height:1px;
+      overflow:hidden;
+    }
+
     &__list {
       display: flex;
       flex-wrap: wrap;

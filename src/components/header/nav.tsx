@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 const Nav = () => <nav className = "navbar navbar--style">
     <div className = "navbar__element">
     <input aria-labelledby="toggle" className = "navbar__checkbox" type="checkbox" />
-    <span id = "toggle" className="sr-only">Toggle mobile menu</span>
+    <span id = "toggle" className="navbar__sr-only">Toggle mobile menu</span>
         <span className = "navbar__burger navbar__burger--color"></span>
         <span className = "navbar__burger navbar__burger--color"></span>
         <span className = "navbar__burger navbar__burger--color"></span>
